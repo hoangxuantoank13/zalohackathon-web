@@ -1,0 +1,58 @@
+{{>html/header}}
+
+
+<div class="">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <form id="form_create_product" method="get" action="/find" enctype="multipart/form-data" data-parsley-validate class="form-horizontal form-label-left">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="user_id">UserId: <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text"  name="user_id" id="user_id" required="required" class="form-control col-md-7 col-xs-12" value="{{userId}}">
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-xs-12">
+                                <button type="button" class="btn btn-success" onclick="randomUserId()" >Random</button>
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-xs-12">
+                                <button type="button" class="btn btn-success" onclick="submitForm()" >Find</button>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Mp3 Seen</a>
+                                </li>
+                                <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Mp3 Recommend</a>
+                                </li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+
+                                <div role="tabpanel" class="tab-pane fade active in" id="tab_content2" aria-labelledby="home-tab">
+                                    {{#MP3_SEEN}}
+                                    {{>html/table-view}}
+                                    {{/MP3_SEEN}}
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                                    {{#MP3_RECOMMEND}}
+                                    {{>html/table-view}}
+                                    {{/MP3_RECOMMEND}}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{>html/footer}}
+{{>html/alert_message}}

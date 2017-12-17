@@ -1,0 +1,87 @@
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{{TABLE_TITLE}}</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                {{#ADD_BUTTON_DELETE}}
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target=".bs-delete-modal">Delete</button>
+                {{/ADD_BUTTON_DELETE}}
+                {{#ADD_CHECKBOX}}
+                <label>
+                    <input type="checkbox" id="enable_ajax" name="enable_ajax" value="1" checked=""> Enable Ajax
+                </label>
+
+                {{/ADD_CHECKBOX}}
+                <div class="modal fade bs-delete-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">Confirm Modal</h4>
+                            </div>
+                            <div class="modal-body">
+                                <h4>Confirm Delete</h4>
+                                <p>Do you want delete: <strong></strong></p>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="btnDelete" data-dismiss="modal">Delete</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <table id="{{TABLE_ID}}" class="display" cellspacing="0" width="100%">
+                    <thead>
+                        {{#HEADER_TABLE}}
+                        <tr>
+                            {{#COL_HEADER}}
+                            <th>{{COL_HEADER_VALUE}}</th>
+                            {{/COL_HEADER}}
+                        </tr>
+                        {{/HEADER_TABLE}}
+
+                    </thead>
+
+                    <tbody>
+                        {{#ROW_TABLE}}
+                        <tr>
+                            {{#COL_TABLE}}
+                            <td>{{COL_TABLE_VALUE}}</td>
+                            {{/COL_TABLE}}
+
+                        </tr>
+                        {{/ROW_TABLE}}
+                    </tbody>
+                </table>
+            </div>
+            {{>html/paging}}
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    table{
+        margin: 0 auto;
+        width: 100%;
+        clear: both;
+        border-collapse: collapse;
+        table-layout: fixed; 
+        word-wrap:break-word;
+    }
+</style>
+
+
+
+
+
+

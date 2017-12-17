@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="login">
+
+          <div class="box-waitting" style='text-align: center;height: 50px; display: none'><img style='height: 100%' src='../production/images/custom/loader.gif'></div>
+
+          <div class="login_wrapper">
+            <div class="animate form login_form">
+              <section class="login_content">
+                <form>
+                    <h1>{{ADD_TITLE}}</h1>
+                    {{#INPUT_FIELD}}
+                    <div>
+                      <input type="{{INPUT_FIELD_TYPE}}" class="form-control" placeholder="{{INPUT_FIELD_PLACEHOLDER}}" required="" id="{{INPUT_FIELD_ID}}"/>
+                      <p class="text-danger"></p>
+                    </div>
+                    {{/INPUT_FIELD}}
+                    
+                    {{#RADIO_BUTTON}}
+                    <div class="btn-group" data-toggle="buttons">
+                        {{#OPTION}}
+                        <label class="btn btn-default {{#selected_radio}} btn-primary{{/selected_radio}}">
+                            <input type="radio" name="{{name_radio}}" value="{{value_radio}}" {{#selected_radio}} checked{{/selected_radio}}> {{title_radio}}
+                        </label>
+                        {{/OPTION}}
+
+                    </div>
+                    {{/RADIO_BUTTON}}
+                    
+
+                    <div id="form-error">
+                      <p class="text-danger"></p>
+                    </div>
+                    
+                    <div>
+                      <a class="btn btn-default submit" onclick="{{ADD_FUNCTION}}">Submit</a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+
+                      <div class="clearfix"></div>
+                      <br />
+
+                      <div>
+                        <h1><i class="fa fa-cogs"></i> Youtube Analytics</h1>
+                        <p>Product By 1312614 - 1312335</p>
+                      </div>
+                    </div>
+                </form>
+              </section>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+

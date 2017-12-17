@@ -1,0 +1,19 @@
+<script type="text/javascript">
+    {{#success}}
+    new PNotify({
+        title: '{{title}}',
+        text: '{{text}}',
+        type: 'success',
+        styling: 'bootstrap3'
+    });
+    {{/success}}
+            
+    {{#error}}
+    new PNotify({
+        title: '{{title}}',
+        text: '{{text}}',
+        type: 'error',
+        styling: 'bootstrap3'
+    });
+    {{/error}}
+</script>
